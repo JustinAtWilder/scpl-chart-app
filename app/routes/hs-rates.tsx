@@ -87,7 +87,7 @@ const options : ChartOptions<"line"> = {
   },
   scales: {
     y: {
-      min: 60,
+      min: 65,
       max: 100,
       ticks: {
         callback: function (tickValue: string | number) {
