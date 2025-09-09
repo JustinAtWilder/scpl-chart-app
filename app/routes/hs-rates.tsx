@@ -32,42 +32,42 @@ const data = {
       data: [87, 86, 86],
       borderColor: "rgb(19, 94, 170)", // Bright blue
       backgroundColor: "rgb(19, 94, 170)",
-      tension: 0.4,
+      tension: 0,
     },
     {
       label: "Schenectedy City School District",
       data: [78, 74, 70],
       borderColor: "rgb(19, 36, 14)", // Dark blue or Maroon
       backgroundColor: "rgb(19, 36, 14)",
-      tension: 0.4,
+      tension: 0,
     },
     {
       label: "Rotterdam-Mohonasen CSD",
       data: [80, 81, 84],
       borderColor: "rgb(239, 70, 35)", // Deep orange
       backgroundColor: "rgb(239, 70, 35)",
-      tension: 0.4,
+      tension: 0,
     },
     {
       label: "Scotia-Glenville CSD",
       data: [86, 81, 83],
       borderColor: "rgb(160, 6, 6)", // Deep red
       backgroundColor: "rgb(160, 6, 6)",
-      tension: 0.4,
+      tension: 0,
     },
     {
       label: "Niskayuna CSD",
       data: [92, 93, 92],
       borderColor: "rgb(195, 32, 50)", // Bright red
       backgroundColor: "rgb(195, 32, 50)",
-      tension: 0.4,
+      tension: 0,
     },
     {
       label: "Schalmont CSD",
       data: [87, 87, 88],
       borderColor: "rgb(0, 148, 72)", // Green
       backgroundColor: "rgb(0, 148, 72)",
-      tension: 0.4,
+      tension: 0,
     },
   ],
 };
@@ -75,7 +75,7 @@ const data = {
 const options : ChartOptions<"line"> = {
   responsive: true,
   plugins: {
-    legend: { position: "bottom" as const },
+    legend: { position: "bottom", align: "start", title: { display: true, padding: { top: 10, bottom: 10 } }, labels: { boxWidth: 12, padding: 20, font: { family: 'Arial, sans-serif', size: 12 } } },
     title: {
       display: false,
     },
@@ -96,6 +96,7 @@ const options : ChartOptions<"line"> = {
       },
       display: false,
     },
+    x: { display: false },
   },
   layout: {
     padding: { right: 30 },
@@ -141,11 +142,13 @@ chart.data.datasets.forEach((dataset, datasetIndex) => {
 export default function HSChart() {
   return (
     <main className="p-8 flex-col items-center justify-center min-h-screen">
-      <h1 className="text-2xl font-bold mb-4">
-        High School Graduation Rates
-      </h1>
+      <div style={{ alignItems: "center", display: "flex", flexDirection: "column", justifyContent: "center", marginTop: 20 }}>
+        <h1 className="text-2xl font-bold mb-4" style={{ fontFamily: "Arial, sans-serif", color: "#333" }}>
+          High School Graduation Rates
+        </h1>
       <div style={{ width: "100%", maxWidth: 900 }}>
         <Line data={data} options={options} plugins={[endLabelPlugin]} />
+      </div>
       </div>
     </main>
     );
