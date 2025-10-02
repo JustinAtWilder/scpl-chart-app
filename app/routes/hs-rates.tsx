@@ -69,6 +69,13 @@ const data = {
       backgroundColor: "rgb(0, 148, 72)",
       tension: 0,
     },
+        {
+      label: "Duanesburg CSD",
+      data: [89, 94, 95],
+      borderColor: "rgb(79, 41, 131)", // Dark purple
+      backgroundColor: "rgb(79, 41, 131)",
+      tension: 0,
+    },
   ],
 };
 
