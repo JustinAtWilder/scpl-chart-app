@@ -35,6 +35,13 @@ const data = {
       tension: 0,
     },
     {
+      label: "Duanesburg Central School District",
+      data: [49, 45, 44],
+      borderColor: "rgb(79, 41, 131)", // Dark blue or Maroon
+      backgroundColor: "rgb(79, 41, 131)",
+      tension: 0,
+    },
+    {
       label: "Schenectedy City School District",
       data: [23, 25, 18],
       borderColor: "rgb(19, 36, 14)", // Dark blue or Maroon
